@@ -564,6 +564,16 @@ video {
   border-color: rgb(82 82 82 / var(--tw-border-opacity));
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-11 {
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+}
+
 .text-center {
   text-align: center;
 }
