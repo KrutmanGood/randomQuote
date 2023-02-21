@@ -591,6 +591,7 @@ video {
   font-size: 18px;
   font-family: monospace;
   text-align: center;
+  padding: 0 13px;
 }
 
 @media screen and (max-width: 415px) {
