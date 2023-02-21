@@ -4,7 +4,10 @@ module.exports = {
     extend: {
       screens: {
         smartphone: '414px'
-      }
+      },
+      fontFamily: {
+        regular: ["'Mynerve'", 'cursive;']
+      },
     },
   },
   plugins: [],
