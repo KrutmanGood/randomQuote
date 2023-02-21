@@ -533,17 +533,6 @@ video {
   width: 100%;
 }
 
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-.animate-ping {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -562,10 +551,6 @@ video {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .border-2 {
   border-width: 2px;
 }
@@ -579,24 +564,27 @@ video {
   border-color: rgb(82 82 82 / var(--tw-border-opacity));
 }
 
+.text-center {
+  text-align: center;
+}
+
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.container {
-  padding: 0 13px;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
-#quoteText {
-  font-size: 18px;
-  font-family: monospace;
-  text-align: center;
-  padding: 0 13px;
-}
+@media (min-width: 414px) {
+  .smartphone\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-@media screen and (max-width: 415px) {
-  #quoteText {
-    padding: 0 10px;
-    /* background-color: red; */
+  .smartphone\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
