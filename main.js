@@ -6,26 +6,33 @@ const cursor = document.createElement('span')
 cursor.textContent = '|'
 
 let newMessage = ''
+let flag = false
 
 changeBtn.addEventListener('click', async (event) => {
-    const arrayWithQuotes = await axios.get('https://type.fit/api/quotes')
+    if (!flag) {
+        flag = true
 
-    const quote = arrayWithQuotes.data[random(0, 1642)]
+        const arrayWithQuotes = await axios.get('https://type.fit/api/quotes')
 
-    for (let i = 0; i < quote.text.length; i++) {
-        setTimeout(() => {
-            newMessage = newMessage + quote.text[i]
-            quoteText.innerHTML = newMessage
-            quoteText.append(cursor)
-        }, (i + 1) * 50)
-    }
+        const quote = arrayWithQuotes.data[random(0, 1642)]
 
-    newMessage = ''
+        for (let i = 0; i < quote.text.length; i++) {
+            setTimeout(() => {
+                newMessage = newMessage + quote.text[i]
+                quoteText.innerHTML = newMessage
+                quoteText.append(cursor)
+            }, (i + 1) * 50)
+        }
 
-    if (quote.author) {
-        quoteAuthor.innerHTML = '@ ' + quote.author
-    } else {
-        quoteAuthor.innerHTML = '@ Unknown'
+        newMessage = ''
+
+        if (quote.author) {
+            quoteAuthor.innerHTML = '@ ' + quote.author
+        } else {
+            quoteAuthor.innerHTML = '@ Unknown'
+        }
+
+        flag = false
     }
 })
 
