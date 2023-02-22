@@ -30,7 +30,7 @@ const jokes = [
                         }, (i + 1) * 20)
                     }
                 }
-            }, (i + 1) * 70)
+            }, (i + 1) * 52)
         }
     },
     function (resolve, reject) {
@@ -56,7 +56,7 @@ const jokes = [
                         }, (i + 1) * 20)
                     }
                 }
-            }, (i + 1) * 70)
+            }, (i + 1) * 52)
         }
     },
     function (resolve, reject) {
@@ -82,22 +82,20 @@ const jokes = [
                         }, (i + 1) * 20)
                     }
                 }
-            }, (i + 1) * 70)
+            }, (i + 1) * 52)
         }
     }
 ]
 
 changeBtn.addEventListener('click', async (event) => {
     changeBtn.style.pointerEvents = 'none'
-    changeBtn.style.opacity = '0.7'
+    changeBtn.style.opacity = '0.5'
 
     let newMessage = ''
 
     const arrayWithQuotes = await axios.get('https://type.fit/api/quotes')
 
     const quote = arrayWithQuotes.data[random(0, 1642)]
-
-    quoteAuthor.innerHTML = ''
 
     const randomNum = random(1, 15)
 
@@ -127,18 +125,16 @@ changeBtn.addEventListener('click', async (event) => {
                     changeBtn.style.pointerEvents = 'auto'
                     changeBtn.style.opacity = '1'
                 }
-            }, (i + 1) * 50)
+            }, (i + 1) * 40)
         }
     
         newMessage = ''
     })
 
     if (quote.author) {
-        quoteAuthor.innerHTML = '@ ' + quote.author
-        // quoteAuthor.style.display = 'none'
-        // loading.style.display = 'block'
+        quoteAuthor.innerHTML = quote.author
     } else {
-        quoteAuthor.innerHTML = '@ Unknown'
+        quoteAuthor.innerHTML = 'Unknown'
     }
 })
 
